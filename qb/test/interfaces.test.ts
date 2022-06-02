@@ -11,7 +11,7 @@ export enum Genre {
 
 export interface BaseObject {
   id: string;
-  __type__: schema.Type;
+  __type__: schema.ObjectType;
 }
 export interface test_Person extends BaseObject {
   name: string;
@@ -29,6 +29,7 @@ export interface test_Profile extends BaseObject {
   slug?: string | null;
 }
 
+const asd: Movie = "asdf" as any as test_Movie;
 test("check generated interfaces", () => {
   tc.assert<tc.IsExact<Movie, test_Movie>>(true);
 });
